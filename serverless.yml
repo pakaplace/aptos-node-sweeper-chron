@@ -79,11 +79,11 @@ custom:
 #    - exclude-me-dir/**
 
 functions:
-  hello:
-    handler: src/hello.default
+  handler:
+    handler: src/handler.default
     events:
       - http:
-          path: hello
+          path: handler
           method: get
 
 #    The following are a few example events you can configure

@@ -11,22 +11,26 @@
     "lint": "eslint src --ext ts,js --no-ignore --fix",
     "serve": "sls offline -P 4000",
     "serve:watch": "nodemon -e js,ts,jsx,tsx -x yarn serve",
-    "tail:hello": "sls logs --function hello --tail",
+    "tail:handler": "sls logs --function handler --tail",
     "test": "jest",
     "test:watch": "jest --watch",
     "build": "sls webpack",
-    "watch:hello": "sls invoke local --watch --function hello --path fixtures/event.json"
+    "watch:handler": "sls invoke local --watch --function handler --path fixtures/event.json"
   },
   "devDependencies": {
+    "@sendgrid/mail": "^7.4.2",
     "@types/aws-lambda": "^8.10.39",
     "@types/jest": "^25.1.0",
     "@typescript-eslint/eslint-plugin": "^3.0.0",
     "@typescript-eslint/parser": "^3.0.0",
+    "dayjs": "^1.10.3",
     "eslint": "^6.3.0",
     "eslint-config-prettier": "^6.3.0",
     "husky": "^4.0.2",
     "jest": "^24.9.0",
+    "js-sha3": "^0.8.0",
     "lint-staged": "^10.0.3",
+    "mongoose": "^5.11.12",
     "nodemon": "^2.0.0",
     "prettier": "^2.0.0",
     "serverless": "^1.51.0",
@@ -37,6 +41,8 @@
     "serverless-webpack": "^5.3.1",
     "ts-jest": "^25.1.0",
     "ts-loader": "^6.1.0",
+    "ts-node": "^10.7.0",
+    "tweetnacl": "^1.0.3",
     "typescript": "^3.6.3",
     "webpack": "^4.39.3",
     "webpack-node-externals": "^1.7.2"
@@ -52,5 +58,11 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "dependencies": {
+    "add": "^2.0.6",
+    "axios": "^0.27.2",
+    "cross-fetch": "^3.1.5",
+    "yarn": "^1.22.18"
   }
 }
